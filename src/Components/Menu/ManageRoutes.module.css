@@ -1,0 +1,26 @@
+.navItem:hover{
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 18px;
+}
+.navItem{    
+    color: #ffffff !important;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    font-size: 15px;
+}
+.navLink{
+    color: #ffffff !important;
+    list-style: none;    
+    display: block;
+    padding: .5rem 1rem;
+}
+.navLink:hover{
+    color: #ffffff !important;
+    list-style: none;    
+    display: block;
+    text-decoration: none;
+    padding: .5rem 1rem;
+}
