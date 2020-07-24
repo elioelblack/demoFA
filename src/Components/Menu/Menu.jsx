@@ -10,7 +10,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import {Navbar,Nav} from 'react-bootstrap';
+import {Navbar,Nav, Form, FormControl, Button} from 'react-bootstrap';
 import styles from './ManageRoutes.module.css';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
@@ -21,6 +21,9 @@ import logofa from '../../images/logofa.png';
 import Jump from 'react-reveal/Jump';
 import Carousel from '../Carousel/Carousel';
 import Index from '../Index/Index';
+import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search';
+import { fade } from '@material-ui/core/styles';
 function ElevationScroll(props) {
     const { children, window } = props;
     // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -88,16 +91,71 @@ ElevationScroll.propTypes = {
      */
     window: PropTypes.func,
 };
+
+const useStyles2 = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+      display: 'none',
+      [theme.breakpoints.up('sm')]: {
+        display: 'block',
+      },
+    },
+    search: {
+      position: 'relative',
+      borderRadius: theme.shape.borderRadius,
+      backgroundColor: fade(theme.palette.common.white, 0.15),
+      '&:hover': {
+        backgroundColor: fade(theme.palette.common.white, 0.25),
+      },
+      marginLeft: 0,
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(1),
+        width: 'auto',
+      },
+    },
+    searchIcon: {
+      padding: theme.spacing(0, 2),
+      height: '100%',
+      position: 'absolute',
+      pointerEvents: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    inputRoot: {
+      color: 'inherit',
+    },
+    inputInput: {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        width: '12ch',
+        '&:focus': {
+          width: '20ch',
+        },
+      },
+    },
+  }));
 export default function App() {
-    
+    const classes = useStyles2();
     return (
         <HashRouter >    
             <React.Fragment>
                 <CssBaseline />
                 <ElevationScroll >
-                    <AppBar>
-                        <Toolbar>
-                            <Navbar collapseOnSelect expand="lg"  variant="dark" >
+                    <AppBar style={{backgroundColor:'#24292e'}}>
+                        <Toolbar style={{backgroundColor:'#24292e'}}>
+                            <Navbar collapseOnSelect expand="lg"  style={{backgroundColor:'#24292e'}} >
                                 <Navbar.Brand href="#" >
                                     <img
                                         alt=""
@@ -121,7 +179,9 @@ export default function App() {
                                         </li>                                        
                                     </Nav>
                                 </Navbar.Collapse>
-                            </Navbar>
+                                
+                            </Navbar> 
+                                                  
                         </Toolbar>
                     </AppBar>
                 </ElevationScroll>

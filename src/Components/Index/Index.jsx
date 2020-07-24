@@ -11,6 +11,8 @@ import { Parallax } from "react-parallax";
 import Rotate from 'react-reveal/Rotate';
 import Fade from 'react-reveal/Fade';
 import CountUp from 'react-countup';
+import Figure from 'react-bootstrap/Figure';
+import { red } from '@material-ui/core/colors';
 let usesInternStyle = {
     padding: 20,
     position: "absolute",
@@ -148,7 +150,7 @@ export default function Index() {
                                     <Col style={{textAlign:'center'}}>
                                     <Jump>
                                     <Image src={computadora} width="50%" height="auto"/>
-                                    </Jump>
+                                    </Jump>                                    
                                     </Col>
                                 </Row>
                                 <Row>
